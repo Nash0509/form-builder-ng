@@ -69,6 +69,13 @@ export class AppComponent implements OnInit {
     this.poGrp?.get('row')?.value.map((row: any) => {
       this.totalQuantity += row.value.quantity;
     });
+
+    //update the total totalMoney
+    this.totalMoney = 0;
+    this.poGrp?.get('row')?.value.map((row: any) => {
+      this.totalMoney += row.value.total;
+    });
+    
   }
 
   handleRate(change: string, index: number) {
@@ -86,8 +93,6 @@ export class AppComponent implements OnInit {
           rowValue.value.quantity * rowValue.value.unitRate;
       }
     }
-
-    //update the row total
 
     //update the total totalMoney
     this.totalMoney = 0;
